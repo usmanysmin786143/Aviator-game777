@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="crimson">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USYS — Official Aviator Hub</title>
+  <meta name="description" content="USYS Official Aviator Hub — Paid VIP groups ranked by INR (₹) priority, QR payment verification, and direct one-tap Free Games." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root, [data-theme="crimson"] {
+      --bg-page: #070b14;
+      --bg-surface: rgba(15, 23, 42, 0.84);
+      --bg-surface-solid: #0f172a;
+      --bg-input: rgba(9, 13, 22, 0.92);
+      --border-subtle: rgba(148, 163, 184, 0.16);
+      --primary: #f43f5e;
+      --primary-hover: #e11d48;
+      --primary-soft: rgba(244, 63, 94, 0.14);
+      --primary-border: rgba(244, 63, 94, 0.36);
+      --secondary: #f59e0b;
+      --secondary-soft: rgba(245, 158, 11, 0.14);
+      --glow-1: rgba(244, 63, 94, 0.24);
+      --glow-2: rgba(245, 158, 11, 0.18);
+      --grad-start: #fb7185;
+      --grad-end: #fbbf24;
+      --btn-grad-from: #e11d48;
+      --btn-grad-to: #d97706;
+    }
+    [data-theme="emerald"] {
+      --bg-page: #04100d;
+      --bg-surface: rgba(6, 28, 23, 0.86);
+      --bg-surface-solid: #061c17;
+      --bg-input: rgba(4, 18, 15, 0.92);
+      --border-subtle: rgba(52, 211, 153, 0.16);
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --primary-soft: rgba(16, 185, 129, 0.15);
+      --primary-border: rgba(16, 185, 129, 0.38);
+      --secondary: #14b8a6;
+      --secondary-soft: rgba(20, 184, 166, 0.15);
+      --glow-1: rgba(16, 185, 129, 0.24);
+      --glow-2: rgba(20, 184, 166, 0.16);
+      --grad-start: #34d399;
+      --grad-end: #2dd4bf;
+      --btn-grad-from: #059669;
+      --btn-grad-to: #0d9488;
+    }
+    [data-theme="violet"] {
+      --bg-page: #090614;
+      --bg-surface: rgba(22, 14, 46, 0.86);
+      --bg-surface-solid: #160e2e;
+      --bg-input: rgba(12, 7, 28, 0.92);
+      --border-subtle: rgba(167, 139, 250, 0.18);
+      --primary: #8b5cf6;
+      --primary-hover: #7c3aed;
+      --primary-soft: rgba(139, 92, 246, 0.16);
+      --primary-border: rgba(139, 92, 246, 0.4);
+      --secondary: #06b6d4;
+      --secondary-soft: rgba(6, 182, 212, 0.15);
+      --glow-1: rgba(139, 92, 246, 0.28);
+      --glow-2: rgba(6, 182, 212, 0.18);
+      --grad-start: #a78bfa;
+      --grad-end: #22d3ee;
+      --btn-grad-from: #7c3aed;
+      --btn-grad-to: #0891b2;
+    }
+    [data-theme="gold"] {
+      --bg-page: #0c0a07;
+      --bg-surface: rgba(28, 22, 14, 0.88);
+      --bg-surface-solid: #1c160e;
+      --bg-input: rgba(15, 12, 8, 0.92);
+      --border-subtle: rgba(234, 179, 8, 0.2);
+      --primary: #eab308;
+      --primary-hover: #ca8a04;
+      --primary-soft: rgba(234, 179, 8, 0.15);
+      --primary-border: rgba(234, 179, 8, 0.4);
+      --secondary: #f97316;
+      --secondary-soft: rgba(249, 115, 22, 0.15);
+      --glow-1: rgba(234, 179, 8, 0.24);
+      --glow-2: rgba(249, 115, 22, 0.15);
+      --grad-start: #fde047;
+      --grad-end: #fb923c;
+      --btn-grad-from: #d97706;
+      --btn-grad-to: #ea580c;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-page);
+      background-image: radial-gradient(circle at 15% 0%, var(--glow-1), transparent 42%), radial-gradient(circle at 85% 15%, var(--glow-2), transparent 40%);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #f1f5f9;
+      transition: background-color 0.35s ease;
+    }
+    .glass-panel {
+      background: var(--bg-surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+    }
+    .theme-input {
+      background: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+    }
+    .theme-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-soft);
+    }
+    .theme-gradient-text {
+      background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .theme-btn-primary {
+      background: linear-gradient(135deg, var(--btn-grad-from), var(--btn-grad-to));
+      box-shadow: 0 8px 20px -6px var(--glow-1);
+    }
+    .theme-btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+    .theme-badge-primary {
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      color: var(--grad-start);
+    }
+    .card-glow:hover {
+      border-color: var(--primary-border);
+      box-shadow: 0 14px 36px -12px var(--glow-1);
+      transform: translateY(-3px);
+    }
+    .paid-card-glow {
+      border-color: rgba(245, 158, 11, 0.42);
+      box-shadow: inset 0 1px 0 0 rgba(251, 191, 36, 0.18);
+    }
+    .paid-card-glow:hover {
+      border-color: rgba(251, 191, 36, 0.78);
+      box-shadow: 0 14px 36px -10px rgba(245, 158, 11, 0.35);
+      transform: translateY(-3px);
+    }
+    .toast-enter {
+      animation: slideUp 0.25s ease-out forwards;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-rose-500/30 selection:text-white">
+  <!-- Toast Container -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm"></div>
+
+  <!-- Top Header with Large Full-Display USYS Brand & Register Own Group Directly Below -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <!-- Left Block: Large Full USYS Name + Subtitle + Register Own Group Directly Below -->
+        <div class="flex flex-col items-start space-y-2.5">
+          <div class="flex items-center gap-3.5">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl theme-btn-primary flex items-center justify-center shrink-0 shadow-xl">
+              <i data-lucide="plane-takeoff" class="w-8 h-8 text-white"></i>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center gap-3">
+                <span id="headerBrandName" class="text-4xl sm:text-5xl md:text-6xl font-black tracking-wider theme-gradient-text leading-none">USYS</span>
+                <span id="headerBadgeText" class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold theme-badge-primary">USYS 1 – 9</span>
+              </div>
+              <p id="headerSubtitle" class="text-xs sm:text-sm text-slate-300 font-medium mt-1">Official Aviator Hub • Paid VIP INR (₹) Priority &amp; Direct Free Games</p>
+            </div>
+          </div>
+
+          <!-- Register Own Group Button Directly Below USYS -->
+          <div class="flex flex-wrap items-center gap-2.5 pt-0.5">
+            <button id="openRegisterPaidBtn" type="button" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold theme-btn-primary text-white transition cursor-pointer shadow-lg">
+              <i data-lucide="crown" class="w-4 h-4"></i>
+              <span>Register Own Group</span>
+            </button>
+            <a href="#paid-vip-section" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 transition">
+              <i data-lucide="trophy" class="w-3.5 h-3.5"></i> Paid VIP Ranks
+            </a>
+            <a href="#free-games-section" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 transition">
+              <i data-lucide="gamepad-2" class="w-3.5 h-3.5"></i> Free Games
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Block: Theme, Wallpaper & Owner Access -->
+        <nav class="flex flex-wrap items-center gap-2 sm:gap-2.5 self-start md:self-center">
+          <!-- Theme Selector -->
+          <div class="relative flex items-center">
+            <i data-lucide="palette" class="w-3.5 h-3.5 text-slate-300 absolute left-2.5 pointer-events-none"></i>
+            <select id="themeSelect" aria-label="Select Color Theme" class="pl-8 pr-6 py-2 rounded-xl text-xs font-semibold theme-input text-slate-200 cursor-pointer transition">
+              <option value="crimson">Crimson Aviator</option>
+              <option value="emerald">Royal Emerald</option>
+              <option value="violet">Cyber Violet</option>
+              <option value="gold">Midnight Gold</option>
+            </select>
+          </div>
+
+          <!-- Custom Wallpaper Upload Button -->
+          <label title="Upload Wallpaper from Gallery" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-slate-200 border border-white/15 cursor-pointer transition">
+            <i data-lucide="image" class="w-4 h-4 text-rose-400"></i>
+            <span>Theme Photo</span>
+            <input type="file" id="globalWallpaperInput" accept="image/*" class="hidden" />
+          </label>
+          <button id="removeWallpaperBtn" type="button" title="Remove Custom Wallpaper" class="hidden p-2 rounded-xl text-xs bg-rose-500/20 text-rose-300 border border-rose-500/30 hover:bg-rose-500/30 transition cursor-pointer">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+
+          <button id="ownerModeBtn" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition cursor-pointer bg-white/5 hover:bg-white/10 text-slate-200 border-white/15">
+            <i data-lucide="lock" class="w-4 h-4 text-amber-400"></i>
+            <span id="ownerModeBtnText">Owner Access</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Owner Active Control Bar -->
+  <div id="ownerBanner" class="hidden bg-amber-500/10 border-b border-amber-500/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-2.5">
+      <div class="flex items-center gap-2 text-xs sm:text-sm text-amber-200">
+        <i data-lucide="shield-check" class="w-4 h-4 text-amber-400 shrink-0"></i>
+        <span><strong>Owner Mode Active:</strong> Paid VIPs auto-rank #1, #2... on top. Free Games stay at bottom (Name, Photo &amp; Direct Link only).</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <button id="openMasterQrBtn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 hover:bg-amber-400 text-slate-950 transition cursor-pointer">
+          <i data-lucide="qr-code" class="w-3.5 h-3.5"></i> Payment QR &amp; UPI
+        </button>
+        <button id="openBrandingBtnBanner" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-amber-200 border border-amber-500/30 transition cursor-pointer">
+          <i data-lucide="type" class="w-3.5 h-3.5"></i> Edit Title &amp; Hero
+        </button>
+        <button id="openAddFreeGameBtn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white transition cursor-pointer">
+          <i data-lucide="plus" class="w-3.5 h-3.5"></i> Add Free Game
+        </button>
+        <button id="openAddPaidVipBtn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold theme-btn-primary text-white transition cursor-pointer">
+          <i data-lucide="crown" class="w-3.5 h-3.5"></i> Add Paid VIP
+        </button>
+        <button id="resetAllPaidLocksBtn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/15 transition cursor-pointer">
+          <i data-lucide="shield-off" class="w-3.5 h-3.5"></i> Reset Unlocks
+        </button>
+        <button id="exportHtmlBtn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition cursor-pointer">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i> Download HTML
+        </button>
+        <button id="changePinBtn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition cursor-pointer">
+          <i data-lucide="key-round" class="w-3.5 h-3.5"></i> PIN
+        </button>
+        <button id="lockOwnerBtn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 transition cursor-pointer">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i> Lock
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden rounded-3xl glass-panel p-6 sm:p-10 shadow-2xl">
+      <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full blur-3xl pointer-events-none" style="background: var(--glow-1);"></div>
+      <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full blur-3xl pointer-events-none" style="background: var(--glow-2);"></div>
+      <div class="relative z-10 max-w-4xl space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full theme-badge-primary text-xs font-bold tracking-wide uppercase">
+            <span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--primary);"></span>
+            <span id="heroTopBadge">USYS Official Network • INR (₹) Priority Paid VIPs &amp; Direct Free Games</span>
+          </div>
+          <button id="openBrandingBtnHero" type="button" class="hidden owner-only inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/40 transition cursor-pointer">
+            <i data-lucide="pencil" class="w-3.5 h-3.5"></i> Edit Title &amp; Hero
+          </button>
+        </div>
+
+        <h1 id="heroTitle" class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+          Welcome to <span class="theme-gradient-text">USYS</span> Aviator Hub
+        </h1>
+        <p id="heroDescription" class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+          <strong>Paid VIP Groups</strong> rank automatically at the top by highest <strong>INR (₹)</strong> payment (#1, #2...). Register your own group and complete QR payment verification to go live. <strong>Free Games</strong> sit cleanly at the bottom with one-tap direct launch (Game Name, Photo &amp; Link only).
+        </p>
+
+        <!-- Search & Filter Bar -->
+        <div class="pt-2 grid grid-cols-1 sm:grid-cols-12 gap-3">
+          <div class="relative sm:col-span-6">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            <input id="searchInput" type="text" placeholder="Search #1–#9 rank, USYS slot, game name, ₹ amount..." class="w-full pl-10 pr-4 py-2.5 rounded-xl theme-input text-sm text-white placeholder-slate-400 transition" />
+          </div>
+          <div class="sm:col-span-3">
+            <select id="tierFilter" aria-label="Filter by Paid VIP or Free Games" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-slate-200 transition">
+              <option value="ALL">All Sections (Paid Top &amp; Free Bottom)</option>
+              <option value="Paid">Paid VIP Only (₹ Rank #1 → #9)</option>
+              <option value="Free">Free Games Only (Bottom Section)</option>
+            </select>
+          </div>
+          <div class="sm:col-span-3">
+            <select id="slotFilter" aria-label="Filter by USYS headline" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-slate-200 transition">
+              <option value="ALL">All Slots (USYS 1 – 9)</option>
+              <option value="USYS 1">USYS 1</option>
+              <option value="USYS 2">USYS 2</option>
+              <option value="USYS 3">USYS 3</option>
+              <option value="USYS 4">USYS 4</option>
+              <option value="USYS 5">USYS 5</option>
+              <option value="USYS 6">USYS 6</option>
+              <option value="USYS 7">USYS 7</option>
+              <option value="USYS 8">USYS 8</option>
+              <option value="USYS 9">USYS 9</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tier Filter Pills & Serial / USYS Quick Jump -->
+    <section aria-label="Quick Filters and Navigation" class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 mr-1">View:</span>
+        <button type="button" data-tier-pill="ALL" class="tier-pill px-3.5 py-1.5 rounded-full text-xs font-semibold border transition cursor-pointer">All (Paid Top + Free Bottom)</button>
+        <button type="button" data-tier-pill="Paid" class="tier-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition cursor-pointer">
+          <i data-lucide="crown" class="w-3.5 h-3.5"></i> Paid VIP (#1 Rank Top)
+        </button>
+        <button type="button" data-tier-pill="Free" class="tier-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition cursor-pointer">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Free Games (Bottom)
+        </button>
+      </div>
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 mr-1">Slots:</span>
+        <div id="quickJumpPills" class="flex flex-wrap gap-1.5"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: PAID VIP PRIORITY DIRECTORY (ALWAYS ON TOP, SORTED BY INR ₹ HIGHEST FIRST) -->
+    <section id="paid-vip-section" class="space-y-5">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+            <i data-lucide="crown" class="w-4 h-4"></i> Top Priority Leaderboard
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-white">Paid VIP Groups (Ranked #1, #2... by INR ₹)</h2>
+          <p class="text-sm text-slate-400">Highest INR (₹) payment automatically claims Rank #1 at the top. Scan QR or enter group password to unlock.</p>
+        </div>
+        <span id="paidCountBadge" class="text-xs font-bold px-3.5 py-1.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">0 Paid VIPs</span>
+      </div>
+      <div id="paidCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Paid VIP Cards rendered here dynamically -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: FREE GAMES DIRECTORY (ALWAYS AT THE BOTTOM — ONLY NAME, PHOTO & DIRECT LINK, ZERO QR) -->
+    <section id="free-games-section" class="space-y-5 pt-4 border-t border-white/10">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <div class="inline-flex items-center gap-2 text-emerald-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+            <i data-lucide="gamepad-2" class="w-4 h-4"></i> Instant One-Tap Launch
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-white">Free Aviator Games</h2>
+          <p class="text-sm text-slate-400">Tap any Game Photo, Name, or button below to enter the game immediately — no QR code or password needed.</p>
+        </div>
+        <span id="freeCountBadge" class="text-xs font-bold px-3.5 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">0 Free Games</span>
+      </div>
+      <div id="freeCardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Free Game Cards rendered here dynamically (ONLY Name, Photo, Direct Link) -->
+      </div>
+    </section>
+
+    <!-- Login ID Retrieval Instructions & Support Section -->
+    <section id="login-guide" class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
+      <div class="lg:col-span-2 glass-panel rounded-2xl p-6 sm:p-8 space-y-5">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl theme-badge-primary flex items-center justify-center shrink-0">
+              <i data-lucide="key" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-white">How to Register Own Group, Rank #1 &amp; Play Free Games</h2>
+              <p class="text-xs sm:text-sm text-slate-400">Official guide for Paid VIP QR payment verification &amp; Free Game direct links</p>
+            </div>
+          </div>
+          <button id="editInstructionsBtn" type="button" class="hidden owner-only inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 transition cursor-pointer shrink-0">
+            <i data-lucide="pencil" class="w-3.5 h-3.5"></i> Edit Guide
+          </button>
+        </div>
+
+        <ol id="instructionsList" class="space-y-3 text-sm text-slate-300"></ol>
+
+        <div class="rounded-xl theme-badge-primary p-4 flex items-start gap-3">
+          <i data-lucide="shield-alert" class="w-5 h-5 shrink-0 mt-0.5"></i>
+          <div class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            <strong>Payment Verification Policy:</strong> New groups submitted via "Register Own Group" are only created and listed after completing QR payment and submitting a valid 12-digit UTR / Transaction ID.
+          </div>
+        </div>
+      </div>
+
+      <!-- ID Support & Contact Box -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="text-lg font-bold text-white">ID &amp; Paid VIP Support Desk</h3>
+              <p class="text-xs text-slate-400">Verified Owner Support Desk</p>
+            </div>
+            <button id="editContactBtn" type="button" class="hidden owner-only inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 transition cursor-pointer">
+              <i data-lucide="pencil" class="w-3 h-3"></i> Edit
+            </button>
+          </div>
+          <div id="contactInfoContainer" class="space-y-3 text-sm text-slate-300">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/10 text-center">
+          <p class="text-xs text-slate-400">USYS Aviator Hub • Verified INR Priority Directory</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="glass-panel border-t border-white/10 mt-12 py-6 text-center text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>&copy; <span id="footerYear"></span> USYS Aviator Hub. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1 text-slate-300"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Verified Payment &amp; Direct Links</span>
+        <button type="button" id="footerOwnerTrigger" class="text-slate-400 hover:text-white underline transition cursor-pointer">Owner Login</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 1: REGISTER OWN GROUP (2-STEP MANDATORY PAYMENT GATE BEFORE CREATE) -->
+  <!-- ========================================================================= -->
+  <div id="registerPaidModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="glass-panel rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8 border border-amber-500/30">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="crown" class="w-5 h-5 text-amber-400"></i>
+          <span id="regModalTitle">Register Own Group (Step 1 of 2)</span>
+        </div>
+        <button id="closeRegisterPaidModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- STEP 1: Fill Group Details -->
+      <form id="registerStep1Form" class="space-y-4">
+        <p class="text-xs text-slate-300">Fill in your group details below. On the next step, you must complete the INR (₹) QR payment before your group is created and ranked.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">USYS Slot *</label>
+            <select id="regSlotBadge" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-slate-200">
+              <option value="USYS 1">USYS 1</option>
+              <option value="USYS 2">USYS 2</option>
+              <option value="USYS 3">USYS 3</option>
+              <option value="USYS 4">USYS 4</option>
+              <option value="USYS 5">USYS 5</option>
+              <option value="USYS 6">USYS 6</option>
+              <option value="USYS 7">USYS 7</option>
+              <option value="USYS 8">USYS 8</option>
+              <option value="USYS 9">USYS 9</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Bid / Payment Amount (₹ INR) *</label>
+            <input id="regInrAmount" type="number" min="100" step="1" placeholder="e.g. 5000" value="5000" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-white font-bold" required />
+            <p class="text-[10px] text-amber-300 mt-0.5">Higher ₹ amount ranks higher (#1, #2...).</p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Group / Lobby Name *</label>
+          <input id="regTitle" type="text" placeholder="e.g. USYS Royal Aviator VIP" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-white font-semibold" required />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Member Unlock Password *</label>
+            <input id="regPassword" type="text" placeholder="e.g. 7777" value="7777" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-white font-mono" required />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Group / Game Direct Link *</label>
+            <input id="regLinkUrl" type="url" placeholder="https://t.me/your_group" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-white font-mono" required />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Group Cover Photo (Upload from Gallery)</label>
+          <input type="file" id="regCoverPhotoFile" accept="image/*" class="w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-500/20 file:text-rose-300 hover:file:bg-rose-500/30 cursor-pointer" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Your Group Payment QR Image (Optional)</label>
+          <input type="file" id="regQrPhotoFile" accept="image/*" class="w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-amber-500/20 file:text-amber-300 hover:file:bg-amber-500/30 cursor-pointer" />
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl text-sm font-extrabold theme-btn-primary text-white transition shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+          <span>Proceed to QR Payment</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+
+      <!-- STEP 2: Mandatory QR Payment & UTR Verification Gate -->
+      <form id="registerStep2PaymentForm" class="space-y-5 hidden">
+        <div class="rounded-2xl bg-slate-950/90 border border-amber-500/40 p-5 text-center space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-extrabold">
+            <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> PAYMENT REQUIRED TO CREATE GROUP
+          </div>
+          <p class="text-xs text-slate-300">Scan the official USYS Payment QR below and pay the exact registration fee for <strong id="paySummaryGroupName" class="text-white">your group</strong>:</p>
+          <div class="text-3xl font-black text-emerald-400">
+            ₹<span id="paySummaryAmount">5,000</span>
+          </div>
+          <div class="flex justify-center">
+            <img id="masterPaymentQrPreview" src="" alt="Official USYS Payment QR" class="w-44 h-44 rounded-xl bg-white p-2 object-contain shadow-lg" />
+          </div>
+          <div class="text-xs font-mono text-amber-200 bg-white/5 py-1.5 px-3 rounded-lg inline-block">
+            UPI ID: <span id="masterPaymentUpiText">usys.aviator@upi</span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div>
+            <label for="paymentUtrInput" class="block text-xs font-bold text-slate-200 mb-1">Enter 12-Digit UTR / Transaction Reference ID *</label>
+            <input id="paymentUtrInput" type="text" minlength="8" maxlength="24" placeholder="e.g. 432198765432" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white font-mono tracking-wider" required />
+            <p class="text-[11px] text-slate-400 mt-1">Without payment and UTR verification, your group will NOT be saved or published.</p>
+          </div>
+
+          <label class="flex items-start gap-2.5 text-xs text-slate-300 cursor-pointer select-none">
+            <input id="paymentConfirmCheckbox" type="checkbox" class="mt-0.5 rounded border-slate-600 text-amber-500 focus:ring-amber-500" required />
+            <span>I confirm that I have completed the ₹ INR payment via the QR code above and entered the genuine Transaction/UTR ID.</span>
+          </label>
+        </div>
+
+        <div class="flex items-center gap-3 pt-2">
+          <button type="button" id="backToStep1Btn" class="px-4 py-3 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/15 text-slate-200 transition cursor-pointer">
+            &larr; Back
+          </button>
+          <button type="submit" class="flex-1 py-3 rounded-xl text-sm font-extrabold bg-emerald-600 hover:bg-emerald-500 text-white transition shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Verify Payment &amp; Create Group</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 2: OWNER ADD FREE GAME / PAID VIP DIRECTLY (OWNER MODE ONLY)        -->
+  <!-- ========================================================================= -->
+  <div id="ownerQuickAddModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="glass-panel rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="plus-circle" class="w-5 h-5 text-emerald-400"></i>
+          <span id="ownerQuickAddTitle">Add Free Game</span>
+        </div>
+        <button id="closeOwnerQuickAddModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="ownerQuickAddForm" class="space-y-4">
+        <input type="hidden" id="ownerAddTier" value="Free" />
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Game / Group Name *</label>
+          <input id="ownerAddName" type="text" placeholder="e.g. Aviator Sky Pro" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-white font-semibold" required />
+        </div>
+
+        <div class="space-y-2">
+          <label class="block text-xs font-semibold text-slate-300">Game / Group Photo (Gallery or URL)</label>
+          <input type="file" id="ownerAddPhotoFile" accept="image/*" class="w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-500/20 file:text-rose-300 hover:file:bg-rose-500/30 cursor-pointer" />
+          <input id="ownerAddPhotoUrl" type="text" placeholder="Or paste Photo Image URL (https://...)" class="w-full px-3 py-2 rounded-xl theme-input text-xs text-white font-mono" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Direct Game / Group Link *</label>
+          <input id="ownerAddLinkUrl" type="url" placeholder="https://your-aviator-game.com" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-white font-mono" required />
+        </div>
+
+        <!-- Paid VIP fields (hidden when adding Free Game) -->
+        <div id="ownerAddPaidExtra" class="space-y-4 border-t border-white/10 pt-4 hidden">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">USYS Slot</label>
+              <select id="ownerAddSlot" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-slate-200">
+                <option value="USYS 1">USYS 1</option>
+                <option value="USYS 2">USYS 2</option>
+                <option value="USYS 3">USYS 3</option>
+                <option value="USYS 4">USYS 4</option>
+                <option value="USYS 5">USYS 5</option>
+                <option value="USYS 6">USYS 6</option>
+                <option value="USYS 7">USYS 7</option>
+                <option value="USYS 8">USYS 8</option>
+                <option value="USYS 9">USYS 9</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">INR (₹) Rank Amount</label>
+              <input id="ownerAddInr" type="number" value="5000" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-white" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Unlock Password</label>
+              <input id="ownerAddPass" type="text" value="7777" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-white font-mono" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">VIP Payment QR Image (Optional)</label>
+            <input type="file" id="ownerAddQrFile" accept="image/*" class="w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-amber-500/20 file:text-amber-300 hover:file:bg-amber-500/30 cursor-pointer" />
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl text-sm font-extrabold theme-btn-primary text-white transition shadow-lg cursor-pointer">
+          Save &amp; Publish
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 3: EDIT EXISTING FREE GAME OR PAID VIP GROUP                        -->
+  <!-- ========================================================================= -->
+  <div id="groupManagerModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="glass-panel rounded-2xl max-w-xl w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="shield-check" class="w-5 h-5 text-amber-400"></i>
+          <span id="groupManagerModalTitle">Edit Item</span>
+        </div>
+        <button id="closeGroupManagerModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Group Owner PIN verification step -->
+      <div id="groupPinStep" class="space-y-4">
+        <div class="rounded-xl theme-badge-primary p-3.5 text-xs text-slate-200">
+          Enter Group Owner PIN (or Master Owner PIN) to edit this item's name, photo, or link. (Default Group PIN: <code class="font-mono text-amber-300">1111</code>)
+        </div>
+        <form id="groupPinForm" class="space-y-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Security PIN</label>
+            <input id="groupOwnerPinInput" type="password" placeholder="Enter PIN (e.g. 1111)" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white tracking-widest text-center font-mono" required />
+          </div>
+          <button type="submit" class="w-full py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Verify PIN</button>
+        </form>
+      </div>
+
+      <!-- Edit Content -->
+      <div id="groupEditContent" class="space-y-5 hidden">
+        <form id="groupEditForm" class="space-y-4">
+          <input type="hidden" id="editCardId" />
+          <input type="hidden" id="editTierType" />
+
+          <!-- 1. Name -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Game / Group Name *</label>
+            <input id="editTitle" type="text" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-white font-semibold" required />
+          </div>
+
+          <!-- 2. Photo -->
+          <div class="border-t border-white/10 pt-4 space-y-2">
+            <label class="block text-xs font-semibold text-slate-300">Photo (Gallery या Image URL)</label>
+            <div class="flex flex-wrap items-center gap-3">
+              <input type="file" id="groupCoverPhotoFile" accept="image/*" class="text-xs text-slate-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-500/20 file:text-rose-300 hover:file:bg-rose-500/30 cursor-pointer" />
+              <button type="button" id="clearGroupCoverBtn" class="text-xs text-slate-400 hover:text-rose-300 underline cursor-pointer">Remove Photo</button>
+            </div>
+            <input type="text" id="editCardPhoto" placeholder="Or paste Image URL (https://...)" class="w-full px-3 py-2 rounded-xl theme-input text-xs text-white font-mono" />
+          </div>
+
+          <!-- 3. Direct Game Link (Shown for Free Games: ONLY Name, Photo, Direct Link) -->
+          <div id="freeDirectLinkSection" class="border-t border-white/10 pt-4 space-y-2">
+            <label class="block text-xs font-semibold text-emerald-300">Direct Game Link *</label>
+            <input id="editFreeDirectUrl" type="url" placeholder="https://your-aviator-game-link.com" class="w-full px-3 py-2.5 rounded-xl theme-input text-sm text-white font-mono" />
+          </div>
+
+          <!-- Paid VIP Specific Fields (Hidden for Free Games) -->
+          <div id="paidFieldsGroup" class="space-y-4 border-t border-white/10 pt-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">USYS Slot</label>
+                <select id="editSlotBadge" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-slate-200">
+                  <option value="USYS 1">USYS 1</option>
+                  <option value="USYS 2">USYS 2</option>
+                  <option value="USYS 3">USYS 3</option>
+                  <option value="USYS 4">USYS 4</option>
+                  <option value="USYS 5">USYS 5</option>
+                  <option value="USYS 6">USYS 6</option>
+                  <option value="USYS 7">USYS 7</option>
+                  <option value="USYS 8">USYS 8</option>
+                  <option value="USYS 9">USYS 9</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">INR (₹) Amount</label>
+                <input id="editInrAmount" type="number" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-white" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Unlock Password</label>
+                <input id="editPassword" type="text" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-white font-mono" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Group QR Code Image</label>
+              <input type="file" id="groupQrPhotoFile" accept="image/*" class="text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-amber-500/20 file:text-amber-300 hover:file:bg-amber-500/30 cursor-pointer" />
+              <input id="editQrUrl" type="text" placeholder="Or paste QR image URL" class="w-full mt-2 px-3 py-2 rounded-xl theme-input text-xs text-white font-mono" />
+            </div>
+
+            <div class="border-t border-white/10 pt-3 space-y-2">
+              <div class="flex items-center justify-between">
+                <label class="block text-xs font-semibold text-slate-300">VIP Group Links</label>
+                <button type="button" id="addGroupLinkItemBtn" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/15 text-white transition cursor-pointer">
+                  <i data-lucide="plus" class="w-3 h-3"></i> Add Link
+                </button>
+              </div>
+              <div id="editLinksContainer" class="space-y-2.5 max-h-48 overflow-y-auto pr-1"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 pt-4 border-t border-white/10">
+            <button type="button" id="deleteCardBtn" class="px-4 py-2 rounded-xl text-xs font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30 hover:bg-rose-500/30 transition cursor-pointer">Delete</button>
+            <button type="submit" class="px-5 py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: OWNER MASTER PAYMENT QR SETTINGS -->
+  <div id="masterQrModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="glass-panel rounded-2xl max-w-md w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="qr-code" class="w-5 h-5 text-amber-400"></i>
+          <span>Owner Registration Payment QR</span>
+        </div>
+        <button id="closeMasterQrModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-300">This QR code and UPI ID will be shown to users when they click <strong>Register Own Group</strong> and proceed to payment.</p>
+      <form id="masterQrForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Your UPI ID</label>
+          <input id="masterUpiInput" type="text" placeholder="yourname@upi" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white font-mono" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Upload Your Payment QR Photo</label>
+          <input type="file" id="masterQrFile" accept="image/*" class="w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-amber-500/20 file:text-amber-300 hover:file:bg-amber-500/30 cursor-pointer" />
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Save Payment QR</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 5: OWNER PIN LOGIN -->
+  <div id="ownerModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden">
+    <div class="glass-panel rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl relative">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="lock" class="w-5 h-5 text-amber-400"></i>
+          <span>Owner Access PIN</span>
+        </div>
+        <button id="closeOwnerModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-xs text-slate-300">Enter Master Owner PIN to manage Paid VIPs, Free Games, Payment QR, and branding (Default: <code class="text-amber-300 font-mono">1234</code>).</p>
+      <form id="ownerPinForm" class="space-y-4">
+        <div>
+          <label for="ownerPinInput" class="block text-xs font-semibold text-slate-300 mb-1">Security PIN</label>
+          <input id="ownerPinInput" type="password" placeholder="Enter PIN (1234)" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white tracking-widest text-center font-mono" required />
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Authenticate</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 6: CHANGE MASTER PIN -->
+  <div id="changePinModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden">
+    <div class="glass-panel rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl relative">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="key-round" class="w-5 h-5 text-amber-400"></i>
+          <span>Change Master PIN</span>
+        </div>
+        <button id="closeChangePinModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form id="changePinForm" class="space-y-4">
+        <div>
+          <label for="newPinInput" class="block text-xs font-semibold text-slate-300 mb-1">New Master PIN</label>
+          <input id="newPinInput" type="password" placeholder="e.g. 5678" maxlength="8" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white tracking-widest text-center font-mono" required />
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Update PIN</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 7: PASSWORD UNLOCK DIALOG FOR PAID VIP LOBBIES -->
+  <div id="passwordUnlockModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden">
+    <div class="glass-panel rounded-2xl max-w-sm w-full p-6 space-y-5 shadow-2xl relative">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="key" class="w-5 h-5 text-amber-400"></i>
+          <span>Enter Unlock Password</span>
+        </div>
+        <button id="closePasswordUnlockModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p id="unlockModalPrompt" class="text-xs text-slate-300">Enter the group password to instantly unlock VIP links.</p>
+      <form id="passwordUnlockForm" class="space-y-4">
+        <input type="hidden" id="unlockCardId" />
+        <div>
+          <label for="unlockPassInput" class="block text-xs font-semibold text-slate-300 mb-1">Group Password</label>
+          <input id="unlockPassInput" type="text" placeholder="Enter group password" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white font-mono text-center" required />
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Unlock VIP Access</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 8: EDIT SITE BRANDING & HERO -->
+  <div id="brandingModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="glass-panel rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="type" class="w-5 h-5 text-amber-400"></i>
+          <span>Edit Site Branding &amp; Hero</span>
+        </div>
+        <button id="closeBrandingModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form id="brandingForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Brand Name (Shown Large at Top)</label>
+          <input id="brandNameInput" type="text" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-white font-bold" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Hero Title</label>
+          <input id="heroTitleInput" type="text" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-white font-bold" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Hero Description</label>
+          <textarea id="heroDescInput" rows="3" class="w-full px-3 py-2 rounded-xl theme-input text-sm text-white" required></textarea>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Save Branding</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 9: EDIT INSTRUCTIONS / GUIDE -->
+  <div id="instructionsModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="glass-panel rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="pencil" class="w-5 h-5 text-amber-400"></i>
+          <span>Edit Guide &amp; Instructions</span>
+        </div>
+        <button id="closeInstructionsModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form id="instructionsForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Instructions (One step per line)</label>
+          <textarea id="instructionsTextarea" rows="6" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white font-mono" required></textarea>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Save Guide</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 10: EDIT CONTACT / SUPPORT DESK -->
+  <div id="contactModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="glass-panel rounded-2xl max-w-md w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-white font-bold text-lg">
+          <i data-lucide="pencil" class="w-5 h-5 text-amber-400"></i>
+          <span>Edit Support Desk</span>
+        </div>
+        <button id="closeContactModal" type="button" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form id="contactForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Support Desk Title</label>
+          <input id="contactNameInput" type="text" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white font-bold" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Telegram / WhatsApp Handle</label>
+          <input id="contactHandleInput" type="text" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Support Direct Link (URL)</label>
+          <input id="contactUrlInput" type="url" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white font-mono" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Support Hours / Note</label>
+          <input id="contactNoteInput" type="text" class="w-full px-3.5 py-2.5 rounded-xl theme-input text-sm text-white" required />
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl text-sm font-semibold theme-btn-primary text-white transition cursor-pointer">Save Support Info</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Application JavaScript -->
+  <script>
+    const STORAGE_KEY = 'usys_aviator_hub_state_v3';
+    const DEFAULT_MASTER_PIN = '1234';
+    const DEFAULT_GROUP_PIN = '1111';
+
+    // Clean Aviation SVG Banner Fallback
+    function getDefaultGameBanner(label, isPaid = false) {
+      const c1 = isPaid ? '#f59e0b' : '#f43f5e';
+      const c2 = isPaid ? '#b45309' : '#be123c';
+      const safeLabel = String(label || 'AVIATOR').replace(/[<>&"']/g, '').slice(0, 26);
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="320" viewBox="0 0 600 320">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0f172a"/>
+            <stop offset="100%" stop-color="${c2}"/>
+          </linearGradient>
+        </defs>
+        <rect width="600" height="320" fill="url(#g)"/>
+        <path d="M0 290 Q 320 260 560 55" fill="none" stroke="${c1}" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="560" cy="55" r="10" fill="#ffffff"/>
+        <text x="36" y="250" fill="#ffffff" font-family="Inter, sans-serif" font-weight="900" font-size="32">${safeLabel}</text>
+        <text x="36" y="282" fill="#cbd5e1" font-family="Inter, sans-serif" font-weight="600" font-size="15">${isPaid ? 'PAID VIP PRIORITY LOBBY' : 'TAP TO PLAY AVIATOR GAME'}</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    // Default QR SVG Placeholder (used ONLY for Paid VIPs & Master Registration QR)
+    function getDefaultQrSvg(labelText) {
+      const safeText = String(labelText || 'PAY').replace(/[<>&"']/g, '').slice(0, 10);
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+        <rect width="220" height="220" rx="16" fill="#ffffff"/>
+        <rect x="20" y="20" width="55" height="55" fill="none" stroke="#0f172a" stroke-width="8"/>
+        <rect x="36" y="36" width="23" height="23" fill="#0f172a"/>
+        <rect x="145" y="20" width="55" height="55" fill="none" stroke="#0f172a" stroke-width="8"/>
+        <rect x="161" y="36" width="23" height="23" fill="#0f172a"/>
+        <rect x="20" y="145" width="55" height="55" fill="none" stroke="#0f172a" stroke-width="8"/>
+        <rect x="36" y="161" width="23" height="23" fill="#0f172a"/>
+        <rect x="92" y="30" width="14" height="14" fill="#0f172a"/>
+        <rect x="114" y="52" width="14" height="14" fill="#0f172a"/>
+        <rect x="82" y="92" width="56" height="36" rx="6" fill="#e11d48"/>
+        <text x="110" y="115" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="12">${safeText}</text>
+        <rect x="145" y="145" width="22" height="22" fill="#0f172a"/>
+        <rect x="178" y="178" width="22" height="22" fill="#0f172a"/>
+        <rect x="145" y="178" width="22" height="22" fill="#0f172a"/>
+      </svg>`;
+      return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    const DEFAULT_STATE = {
+      theme: 'crimson',
+      wallpaper: '',
+      masterPin: DEFAULT_MASTER_PIN,
+      masterPaymentUpi: 'usys.aviator@upi',
+      masterPaymentQr: '',
+      branding: {
+        brandName: 'USYS',
+        heroTitle: 'Welcome to USYS Aviator Hub',
+        heroDesc: 'Paid VIP Groups rank automatically at the top by highest INR (₹) payment (#1, #2...). Register your own group and complete QR payment verification to go live. Free Games sit cleanly at the bottom with one-tap direct launch (Game Name, Photo & Link only).'
+      },
+      cards: [
+        // PAID VIP CARDS (ALWAYS ON TOP, SORTED BY HIGHEST INR ₹)
+        {
+          id: 'paid-1',
+          slot: 'USYS 1',
+          tier: 'Paid',
+          title: 'USYS Royal Aviator VIP',
+          photo: '',
+          directUrl: '',
+          inrAmount: 9999,
+          password: '7777',
+          qrUrl: '',
+          utr: 'VERIFIED-001',
+          links: [
+            { label: 'VIP Main Game Server', url: 'https://example.com/vip-main' },
+            { label: 'VIP Signal Telegram', url: 'https://t.me/example_vip' }
+          ]
+        },
+        {
+          id: 'paid-2',
+          slot: 'USYS 2',
+          tier: 'Paid',
+          title: 'USYS High-Roller Lobby',
+          photo: '',
+          directUrl: '',
+          inrAmount: 4999,
+          password: '5555',
+          qrUrl: '',
+          utr: 'VERIFIED-002',
+          links: [
+            { label: 'High-Roller Direct Link', url: 'https://example.com/high-roller' }
+          ]
+        },
+        {
+          id: 'paid-3',
+          slot: 'USYS 3',
+          tier: 'Paid',
+          title: 'USYS Pro Predictor Club',
+          photo: '',
+          directUrl: '',
+          inrAmount: 2499,
+          password: '3333',
+          qrUrl: '',
+          utr: 'VERIFIED-003',
+          links: [
+            { label: 'Pro Club Lobby', url: 'https://example.com/pro-club' }
+          ]
+        },
+        // FREE GAMES (ALWAYS AT THE BOTTOM — STRICTLY NAME, PHOTO, AND DIRECT LINK ONLY, ZERO QR)
+        {
+          id: 'free-1',
+          slot: 'USYS 4',
+          tier: 'Free',
+          title: 'Aviator Classic Free',
+          photo: '',
+          directUrl: 'https://example.com/aviator-classic',
+          inrAmount: 0,
+          password: '',
+          qrUrl: '',
+          links: []
+        },
+        {
+          id: 'free-2',
+          slot: 'USYS 5',
+          tier: 'Free',
+          title: 'Aviator Turbo Express',
+          photo: '',
+          directUrl: 'https://example.com/aviator-turbo',
+          inrAmount: 0,
+          password: '',
+          qrUrl: '',
+          links: []
+        },
+        {
+          id: 'free-3',
+          slot: 'USYS 6',
+          tier: 'Free',
+          title: 'Aviator Sky Multiplier',
+          photo: '',
+          directUrl: 'https://example.com/aviator-sky',
+          inrAmount: 0,
+          password: '',
+          qrUrl: '',
+          links: []
+        }
+      ],
+      instructions: [
+        'Paid VIP Groups appear at the top and auto-rank #1, #2... by highest INR (₹) payment.',
+        'Click "Register Own Group" below the USYS logo to submit your group. Your group will only be created and published AFTER you complete the QR payment and enter your 12-digit UTR ID.',
+        'To unlock a Paid VIP lobby as a member, scan its QR code or click "Unlock with Password" if you already hold the group password.',
+        'Free Aviator Games are located at the bottom section: tap any Game Photo, Name, or "PLAY NOW" button to launch the game directly.'
+      ],
+      contact: {
+        name: 'USYS Official Support Desk',
+        handle: '@USYS_Aviator_Support',
+        url: 'https://t.me/USYS_Aviator_Support',
+        note: '24/7 Payment Verification & VIP Rank Support'
+      }
+    };
+
+    let appState = JSON.parse(JSON.stringify(DEFAULT_STATE));
+    let isOwnerMode = false;
+    let unlockedPaidIds = new Set();
+    let verifiedGroupIds = new Set();
+    let activeTierFilter = 'ALL';
+    let activeSlotFilter = 'ALL';
+    let searchQuery = '';
+    let pendingGroupRegistration = null;
+
+    // Load & Save State
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          appState = {
+            ...DEFAULT_STATE,
+            ...parsed,
+            branding: { ...DEFAULT_STATE.branding, ...(parsed.branding || {}) },
+            contact: { ...DEFAULT_STATE.contact, ...(parsed.contact || {}) }
+          };
+        }
+      } catch (err) {
+        console.error('Error loading state:', err);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+      } catch (err) {
+        showToast('Storage full. Please use smaller image files or image URLs.', 'error');
+      }
+    }
+
+    // Toast Helper
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      const isError = type === 'error';
+      toast.className = `toast-enter glass-panel px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 text-xs sm:text-sm font-medium border ${
+        isError ? 'border-rose-500/50 text-rose-200' : 'border-emerald-500/50 text-emerald-200'
+      }`;
+      toast.innerHTML = `
+        <i data-lucide="${isError ? 'alert-circle' : 'check-circle-2'}" class="w-4 h-4 shrink-0 ${isError ? 'text-rose-400' : 'text-emerald-400'}"></i>
+        <span>${escapeHtml(message)}</span>
+      `;
+      container.appendChild(toast);
+      lucide.createIcons();
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(8px)';
+        toast.style.transition = 'all 0.25s ease';
+        setTimeout(() => toast.remove(), 260);
+      }, 3400);
+    }
+
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function normalizeUrl(url) {
+      const trimmed = (url || '').trim();
+      if (!trimmed) return '#';
+      if (/^https?:\/\//i.test(trimmed)) return trimmed;
+      return 'https://' + trimmed;
+    }
+
+    // Image file reader with compression
+    function readImageFile(file) {
+      return new Promise((resolve, reject) => {
+        if (!file) return resolve('');
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const maxW = 800;
+            const scale = img.width > maxW ? maxW / img.width : 1;
+            canvas.width = img.width * scale;
+            canvas.height = img.height * scale;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            resolve(canvas.toDataURL('image/jpeg', 0.82));
+          };
+          img.onerror = () => resolve(e.target.result);
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Apply Theme & Wallpaper
+    function applyThemeAndWallpaper() {
+      document.documentElement.setAttribute('data-theme', appState.theme || 'crimson');
+      document.getElementById('themeSelect').value = appState.theme || 'crimson';
+
+      const removeBtn = document.getElementById('removeWallpaperBtn');
+      if (appState.wallpaper) {
+        document.body.style.backgroundImage = `linear-gradient(rgba(7, 11, 20, 0.72), rgba(7, 11, 20, 0.84)), url("${appState.wallpaper}")`;
+        removeBtn.classList.remove('hidden');
+      } else {
+        document.body.style.backgroundImage = '';
+        removeBtn.classList.add('hidden');
+      }
+    }
+
+    // Render Static Sections
+    function renderStaticSections() {
+      document.getElementById('headerBrandName').textContent = appState.branding.brandName;
+      document.title = `${appState.branding.brandName} — Official Aviator Hub`;
+
+      const heroTitleEl = document.getElementById('heroTitle');
+      const brand = escapeHtml(appState.branding.brandName);
+      const rawHero = escapeHtml(appState.branding.heroTitle);
+      if (rawHero.includes(brand)) {
+        heroTitleEl.innerHTML = rawHero.replace(brand, `<span class="theme-gradient-text">${brand}</span>`);
+      } else {
+        heroTitleEl.textContent = appState.branding.heroTitle;
+      }
+      document.getElementById('heroDescription').textContent = appState.branding.heroDesc;
+
+      // Instructions
+      const list = document.getElementById('instructionsList');
+      list.innerHTML = appState.instructions.map((step, idx) => `
+        <li class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full theme-badge-primary text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span>
+          <span>${escapeHtml(step)}</span>
+        </li>
+      `).join('');
+
+      // Contact Desk
+      const contactBox = document.getElementById('contactInfoContainer');
+      contactBox.innerHTML = `
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+          <div class="font-bold text-white flex items-center gap-2">
+            <i data-lucide="headphones" class="w-4 h-4 text-emerald-400"></i>
+            <span>${escapeHtml(appState.contact.name)}</span>
+          </div>
+          <p class="text-xs text-slate-300">${escapeHtml(appState.contact.note)}</p>
+          <a href="${escapeHtml(normalizeUrl(appState.contact.url))}" target="_blank" rel="noopener noreferrer" class="mt-2 w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold theme-btn-primary text-white transition">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span>Message ${escapeHtml(appState.contact.handle)}</span>
+          </a>
+        </div>
+      `;
+
+      document.getElementById('footerYear').textContent = new Date().getFullYear();
+    }
+
+    // Render Quick Jump Slot Pills
+    function renderQuickJumpPills() {
+      const container = document.getElementById('quickJumpPills');
+      const slots = ['ALL', 'USYS 1', 'USYS 2', 'USYS 3', 'USYS 4', 'USYS 5', 'USYS 6', 'USYS 7', 'USYS 8', 'USYS 9'];
+      container.innerHTML = slots.map(slot => {
+        const active = activeSlotFilter === slot;
+        return `<button type="button" data-slot-jump="${slot}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold border transition cursor-pointer ${
+          active
+            ? 'theme-btn-primary text-white border-transparent'
+            : 'bg-white/5 hover:bg-white/10 text-slate-300 border-white/10'
+        }">${slot === 'ALL' ? 'All' : slot}</button>`;
+      }).join('');
+
+      container.querySelectorAll('[data-slot-jump]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeSlotFilter = btn.getAttribute('data-slot-jump');
+          document.getElementById('slotFilter').value = activeSlotFilter;
+          renderDirectory();
+        });
+      });
+
+      document.querySelectorAll('.tier-pill').forEach(pill => {
+        const tier = pill.getAttribute('data-tier-pill');
+        if (tier === activeTierFilter) {
+          pill.className = 'tier-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold border transition cursor-pointer theme-btn-primary text-white border-transparent';
+        } else {
+          pill.className = 'tier-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition cursor-pointer bg-white/5 hover:bg-white/10 text-slate-300 border-white/10';
+        }
+      });
+    }
+
+    // Render Both Sections: Paid VIP on Top (#1, #2... by ₹) and Free Games at Bottom (ONLY Name, Photo, Link)
+    function renderDirectory() {
+      renderQuickJumpPills();
+
+      const paidSectionEl = document.getElementById('paid-vip-section');
+      const freeSectionEl = document.getElementById('free-games-section');
+
+      // Show/Hide sections based on activeTierFilter
+      paidSectionEl.classList.toggle('hidden', activeTierFilter === 'Free');
+      freeSectionEl.classList.toggle('hidden', activeTierFilter === 'Paid');
+
+      // 1. Sort all Paid VIPs strictly by INR descending so #1 is always highest INR
+      const allPaidSorted = appState.cards
+        .filter(c => c.tier === 'Paid')
+        .sort((a, b) => (Number(b.inrAmount) || 0) - (Number(a.inrAmount) || 0));
+
+      // Filter Paid VIPs by slot & search while preserving true rank #1, #2...
+      const filteredPaid = allPaidSorted.filter(c => {
+        if (activeSlotFilter !== 'ALL' && c.slot !== activeSlotFilter) return false;
+        if (searchQuery.trim()) {
+          const q = searchQuery.toLowerCase().trim();
+          const rankStr = '#' + (allPaidSorted.findIndex(p => p.id === c.id) + 1);
+          return (
+            (c.title || '').toLowerCase().includes(q) ||
+            (c.slot || '').toLowerCase().includes(q) ||
+            rankStr.includes(q) ||
+            String(c.inrAmount || '').includes(q)
+          );
+        }
+        return true;
+      });
+
+      document.getElementById('paidCountBadge').textContent = `${filteredPaid.length} Paid ${filteredPaid.length === 1 ? 'VIP' : 'VIPs'}`;
+      const paidGrid = document.getElementById('paidCardsGrid');
+
+      if (filteredPaid.length === 0) {
+        paidGrid.innerHTML = `
+          <div class="col-span-full glass-panel rounded-2xl p-8 text-center space-y-2">
+            <p class="text-sm font-bold text-slate-300">No Paid VIP groups match your current filter.</p>
+            <p class="text-xs text-slate-400">Click "Register Own Group" at the top to claim Rank #1!</p>
+          </div>
+        `;
+      } else {
+        paidGrid.innerHTML = filteredPaid.map(card => {
+          const vipRank = allPaidSorted.findIndex(p => p.id === card.id) + 1;
+          const isUnlocked = isOwnerMode || unlockedPaidIds.has(card.id);
+          const coverImg = card.photo || getDefaultGameBanner(card.title, true);
+          const qrImg = card.qrUrl || getDefaultQrSvg('₹' + (card.inrAmount || 1000));
+          const linksList = Array.isArray(card.links) ? card.links : [];
+
+          return `
+            <article class="glass-panel paid-card-glow rounded-2xl overflow-hidden flex flex-col justify-between relative">
+              <div>
+                <div class="relative h-44 w-full overflow-hidden bg-slate-900">
+                  <img src="${escapeHtml(coverImg)}" alt="${escapeHtml(card.title)}" class="w-full h-full object-cover" onerror="this.src='${getDefaultGameBanner(card.title, true)}'" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent"></div>
+                  <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                    <span class="px-3 py-1 rounded-full text-xs font-black bg-amber-400 text-slate-950 shadow-lg">
+                      #${vipRank} RANK
+                    </span>
+                    <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-slate-950/85 text-amber-300 border border-amber-400/40">
+                      ${escapeHtml(card.slot)}
+                    </span>
+                  </div>
+                  <div class="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-black bg-emerald-500 text-slate-950 shadow-lg">
+                    ₹${Number(card.inrAmount || 0).toLocaleString('en-IN')}
+                  </div>
+                </div>
+
+                <div class="p-5 space-y-4">
+                  <div class="flex items-start justify-between gap-2">
+                    <h3 class="text-lg font-extrabold text-white leading-snug">${escapeHtml(card.title)}</h3>
+                    <button type="button" onclick="openGroupManager('${card.id}')" title="Manage Group" class="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-amber-300 border border-amber-500/30 transition cursor-pointer shrink-0">
+                      <i data-lucide="settings-2" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+
+                  ${isUnlocked ? `
+                    <div class="space-y-2.5">
+                      <div class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400">
+                        <i data-lucide="unlock" class="w-3.5 h-3.5"></i> VIP Links Unlocked
+                      </div>
+                      <div class="space-y-2">
+                        ${linksList.length > 0 ? linksList.map(l => `
+                          <a href="${escapeHtml(normalizeUrl(l.url))}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3.5 rounded-xl text-xs font-bold theme-btn-primary text-white flex items-center justify-between transition">
+                            <span class="truncate">${escapeHtml(l.label || 'Open VIP Group Link')}</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>
+                          </a>
+                        `).join('') : `
+                          <a href="${escapeHtml(normalizeUrl(card.directUrl || '#'))}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3.5 rounded-xl text-xs font-bold theme-btn-primary text-white flex items-center justify-between transition">
+                            <span>Open VIP Lobby</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                          </a>
+                        `}
+                      </div>
+                    </div>
+                  ` : `
+                    <div class="rounded-xl bg-slate-950/85 border border-amber-500/25 p-3.5 flex items-center gap-3.5">
+                      <img src="${escapeHtml(qrImg)}" alt="Payment QR" class="w-20 h-20 rounded-lg bg-white p-1 object-contain shrink-0" />
+                      <div class="space-y-1.5 min-w-0">
+                        <div class="text-xs font-bold text-amber-300">Scan QR to Pay ₹${Number(card.inrAmount || 0).toLocaleString('en-IN')}</div>
+                        <p class="text-[11px] text-slate-400 leading-tight">Have the group password? Unlock immediately below.</p>
+                        <button type="button" onclick="openUnlockModal('${card.id}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition cursor-pointer">
+                          <i data-lucide="key" class="w-3 h-3"></i> Unlock with Password
+                        </button>
+                      </div>
+                    </div>
+                  `}
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      // 2. Render Free Games at the Bottom (STRICTLY ONLY Name, Photo, Direct Link — ZERO QR)
+      const filteredFree = appState.cards
+        .filter(c => c.tier === 'Free')
+        .filter(c => {
+          if (activeSlotFilter !== 'ALL' && c.slot !== activeSlotFilter) return false;
+          if (searchQuery.trim()) {
+            const q = searchQuery.toLowerCase().trim();
+            return (
+              (c.title || '').toLowerCase().includes(q) ||
+              (c.slot || '').toLowerCase().includes(q) ||
+              (c.directUrl || '').toLowerCase().includes(q)
+            );
+          }
+          return true;
+        });
+
+      document.getElementById('freeCountBadge').textContent = `${filteredFree.length} Free ${filteredFree.length === 1 ? 'Game' : 'Games'}`;
+      const freeGrid = document.getElementById('freeCardsGrid');
+
+      if (filteredFree.length === 0) {
+        freeGrid.innerHTML = `
+          <div class="col-span-full glass-panel rounded-2xl p-8 text-center">
+            <p class="text-sm font-bold text-slate-300">No Free Games match your search filter.</p>
+          </div>
+        `;
+      } else {
+        freeGrid.innerHTML = filteredFree.map(card => {
+          const gameLink = normalizeUrl(card.directUrl || (card.links && card.links[0] && card.links[0].url) || '#');
+          const gamePhoto = card.photo || getDefaultGameBanner(card.title, false);
+
+          return `
+            <article class="glass-panel card-glow rounded-2xl overflow-hidden flex flex-col justify-between group relative">
+              <!-- Tapping Photo or Title opens Direct Game Link -->
+              <a href="${escapeHtml(gameLink)}" target="_blank" rel="noopener noreferrer" class="block focus:outline-none">
+                <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+                  <img src="${escapeHtml(gamePhoto)}" alt="${escapeHtml(card.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='${getDefaultGameBanner(card.title, false)}'" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                </div>
+                <div class="p-5 pb-3">
+                  <h3 class="text-xl font-black text-white group-hover:text-rose-400 transition-colors line-clamp-1">
+                    ${escapeHtml(card.title)}
+                  </h3>
+                </div>
+              </a>
+
+              <!-- Direct Game Link Button + Owner Edit Icon -->
+              <div class="px-5 pb-5 pt-1 flex items-center gap-2">
+                <a href="${escapeHtml(gameLink)}" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl text-sm font-extrabold theme-btn-primary text-white flex items-center justify-center gap-2 transition shadow-lg">
+                  <span>PLAY NOW</span>
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+                ${isOwnerMode ? `
+                  <button type="button" onclick="openGroupManager('${card.id}')" title="Edit Free Game" class="p-3 rounded-xl bg-white/10 hover:bg-white/20 text-amber-300 border border-amber-500/30 transition cursor-pointer">
+                    <i data-lucide="pencil" class="w-4 h-4"></i>
+                  </button>
+                ` : ''}
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      lucide.createIcons();
+    }
+
+    // =========================================================================
+    // MODAL HELPERS & REGISTER OWN GROUP (2-STEP PAYMENT GATE)
+    // =========================================================================
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
+    }
+
+    // Open Register Own Group (Always starts at Step 1; cannot create without completing Step 2 payment)
+    document.getElementById('openRegisterPaidBtn').addEventListener('click', () => {
+      pendingGroupRegistration = null;
+      document.getElementById('registerStep1Form').reset();
+      document.getElementById('registerStep2PaymentForm').reset();
+      document.getElementById('registerStep1Form').classList.remove('hidden');
+      document.getElementById('registerStep2PaymentForm').classList.add('hidden');
+      document.getElementById('regModalTitle').textContent = 'Register Own Group (Step 1 of 2)';
+      openModal('registerPaidModal');
+    });
+
+    document.getElementById('closeRegisterPaidModal').addEventListener('click', () => {
+      pendingGroupRegistration = null;
+      closeModal('registerPaidModal');
+    });
+
+    // Step 1 Submit -> Prepare pending data & open Step 2 QR Payment Gate (DO NOT CREATE GROUP YET)
+    document.getElementById('registerStep1Form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const slot = document.getElementById('regSlotBadge').value;
+      const inrAmount = Number(document.getElementById('regInrAmount').value) || 0;
+      const title = document.getElementById('regTitle').value.trim();
+      const password = document.getElementById('regPassword').value.trim();
+      const linkUrl = document.getElementById('regLinkUrl').value.trim();
+
+      if (inrAmount < 100) {
+        showToast('Minimum registration payment is ₹100.', 'error');
+        return;
+      }
+
+      let coverPhoto = '';
+      const coverFile = document.getElementById('regCoverPhotoFile').files[0];
+      if (coverFile) coverPhoto = await readImageFile(coverFile);
+
+      let groupQr = '';
+      const qrFile = document.getElementById('regQrPhotoFile').files[0];
+      if (qrFile) groupQr = await readImageFile(qrFile);
+
+      pendingGroupRegistration = {
+        slot,
+        tier: 'Paid',
+        title,
+        photo: coverPhoto,
+        directUrl: linkUrl,
+        inrAmount,
+        password: password || '7777',
+        qrUrl: groupQr,
+        links: [{ label: `${title} Official Link`, url: linkUrl }]
+      };
+
+      // Populate Step 2 Payment Gate UI
+      document.getElementById('paySummaryGroupName').textContent = title;
+      document.getElementById('paySummaryAmount').textContent = inrAmount.toLocaleString('en-IN');
+      document.getElementById('masterPaymentUpiText').textContent = appState.masterPaymentUpi || 'usys.aviator@upi';
+      document.getElementById('masterPaymentQrPreview').src = appState.masterPaymentQr || getDefaultQrSvg('PAY ₹' + inrAmount);
+      document.getElementById('paymentUtrInput').value = '';
+      document.getElementById('paymentConfirmCheckbox').checked = false;
+
+      document.getElementById('registerStep1Form').classList.add('hidden');
+      document.getElementById('registerStep2PaymentForm').classList.remove('hidden');
+      document.getElementById('regModalTitle').textContent = 'Complete Payment to Create Group (Step 2 of 2)';
+    });
+
+    document.getElementById('backToStep1Btn').addEventListener('click', () => {
+      document.getElementById('registerStep2PaymentForm').classList.add('hidden');
+      document.getElementById('registerStep1Form').classList.remove('hidden');
+      document.getElementById('regModalTitle').textContent = 'Register Own Group (Step 1 of 2)';
+    });
+
+    // Step 2 Submit -> Verify UTR & Payment Confirmation BEFORE creating group
+    document.getElementById('registerStep2PaymentForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!pendingGroupRegistration) return;
+
+      const utr = document.getElementById('paymentUtrInput').value.trim();
+      const confirmed = document.getElementById('paymentConfirmCheckbox').checked;
+
+      if (utr.length < 8) {
+        showToast('Please enter a valid UTR / Transaction ID (minimum 8 characters).', 'error');
+        return;
+      }
+      if (!confirmed) {
+        showToast('Please confirm that you have completed the QR payment.', 'error');
+        return;
+      }
+
+      // Payment verified -> Now create and save the Paid VIP group
+      const newGroup = {
+        id: 'paid-' + Date.now(),
+        ...pendingGroupRegistration,
+        utr
+      };
+
+      appState.cards.push(newGroup);
+      saveState();
+      pendingGroupRegistration = null;
+      renderDirectory();
+      closeModal('registerPaidModal');
+      showToast(`Payment verified (UTR: ${utr})! "${newGroup.title}" is now live and ranked!`);
+    });
+
+    // =========================================================================
+    // OWNER MODE & QUICK ADD FREE GAME / PAID VIP
+    // =========================================================================
+    function updateOwnerModeUI() {
+      const banner = document.getElementById('ownerBanner');
+      const btnText = document.getElementById('ownerModeBtnText');
+      const ownerOnlyEls = document.querySelectorAll('.owner-only');
+
+      if (isOwnerMode) {
+        banner.classList.remove('hidden');
+        btnText.textContent = 'Owner Active';
+        ownerOnlyEls.forEach(el => el.classList.remove('hidden'));
+      } else {
+        banner.classList.add('hidden');
+        btnText.textContent = 'Owner Access';
+        ownerOnlyEls.forEach(el => el.classList.add('hidden'));
+      }
+      renderDirectory();
+    }
+
+    document.getElementById('ownerModeBtn').addEventListener('click', () => {
+      if (isOwnerMode) {
+        isOwnerMode = false;
+        updateOwnerModeUI();
+        showToast('Owner Mode locked.');
+      } else {
+        document.getElementById('ownerPinInput').value = '';
+        openModal('ownerModal');
+      }
+    });
+
+    document.getElementById('footerOwnerTrigger').addEventListener('click', () => {
+      document.getElementById('ownerPinInput').value = '';
+      openModal('ownerModal');
+    });
+
+    document.getElementById('closeOwnerModal').addEventListener('click', () => closeModal('ownerModal'));
+
+    document.getElementById('ownerPinForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const entered = document.getElementById('ownerPinInput').value.trim();
+      if (entered === appState.masterPin) {
+        isOwnerMode = true;
+        closeModal('ownerModal');
+        updateOwnerModeUI();
+        showToast('Owner Mode unlocked!');
+      } else {
+        showToast('Incorrect Master PIN.', 'error');
+      }
+    });
+
+    document.getElementById('lockOwnerBtn').addEventListener('click', () => {
+      isOwnerMode = false;
+      updateOwnerModeUI();
+      showToast('Owner Mode locked.');
+    });
+
+    // Owner Quick Add (Free Game or Paid VIP)
+    function openOwnerQuickAdd(tier) {
+      document.getElementById('ownerQuickAddForm').reset();
+      document.getElementById('ownerAddTier').value = tier;
+      const paidExtra = document.getElementById('ownerAddPaidExtra');
+      const titleEl = document.getElementById('ownerQuickAddTitle');
+
+      if (tier === 'Free') {
+        titleEl.textContent = 'Add Free Game (Name, Photo & Link Only)';
+        paidExtra.classList.add('hidden');
+      } else {
+        titleEl.textContent = 'Add Paid VIP Group';
+        paidExtra.classList.remove('hidden');
+      }
+      openModal('ownerQuickAddModal');
+    }
+
+    document.getElementById('openAddFreeGameBtn').addEventListener('click', () => openOwnerQuickAdd('Free'));
+    document.getElementById('openAddPaidVipBtn').addEventListener('click', () => openOwnerQuickAdd('Paid'));
+    document.getElementById('closeOwnerQuickAddModal').addEventListener('click', () => closeModal('ownerQuickAddModal'));
+
+    document.getElementById('ownerQuickAddForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const tier = document.getElementById('ownerAddTier').value;
+      const title = document.getElementById('ownerAddName').value.trim();
+      const directUrl = document.getElementById('ownerAddLinkUrl').value.trim();
+
+      let photoData = document.getElementById('ownerAddPhotoUrl').value.trim();
+      const photoFile = document.getElementById('ownerAddPhotoFile').files[0];
+      if (photoFile) photoData = await readImageFile(photoFile);
+
+      if (tier === 'Free') {
+        appState.cards.push({
+          id: 'free-' + Date.now(),
+          slot: 'USYS 1',
+          tier: 'Free',
+          title,
+          photo: photoData,
+          directUrl,
+          inrAmount: 0,
+          password: '',
+          qrUrl: '',
+          links: []
+        });
+        showToast(`Free Game "${title}" added to bottom section!`);
+      } else {
+        let qrData = '';
+        const qrFile = document.getElementById('ownerAddQrFile').files[0];
+        if (qrFile) qrData = await readImageFile(qrFile);
+
+        appState.cards.push({
+          id: 'paid-' + Date.now(),
+          slot: document.getElementById('ownerAddSlot').value,
+          tier: 'Paid',
+          title,
+          photo: photoData,
+          directUrl,
+          inrAmount: Number(document.getElementById('ownerAddInr').value) || 1000,
+          password: document.getElementById('ownerAddPass').value.trim() || '7777',
+          qrUrl: qrData,
+          links: [{ label: `${title} Direct Link`, url: directUrl }]
+        });
+        showToast(`Paid VIP "${title}" added and ranked!`);
+      }
+
+      saveState();
+      renderDirectory();
+      closeModal('ownerQuickAddModal');
+    });
+
+    // Master Payment QR Settings Modal
+    document.getElementById('openMasterQrBtn').addEventListener('click', () => {
+      document.getElementById('masterUpiInput').value = appState.masterPaymentUpi || 'usys.aviator@upi';
+      document.getElementById('masterQrFile').value = '';
+      openModal('masterQrModal');
+    });
+    document.getElementById('closeMasterQrModal').addEventListener('click', () => closeModal('masterQrModal'));
+    document.getElementById('masterQrForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      appState.masterPaymentUpi = document.getElementById('masterUpiInput').value.trim();
+      const file = document.getElementById('masterQrFile').files[0];
+      if (file) {
+        appState.masterPaymentQr = await readImageFile(file);
+      }
+      saveState();
+      closeModal('masterQrModal');
+      showToast('Master Registration Payment QR & UPI saved!');
+    });
+
+    // =========================================================================
+    // EDIT EXISTING FREE GAME OR PAID VIP GROUP
+    // =========================================================================
+    window.openGroupManager = function(cardId) {
+      const card = appState.cards.find(c => c.id === cardId);
+      if (!card) return;
+
+      document.getElementById('editCardId').value = card.id;
+      document.getElementById('editTierType').value = card.tier;
+      document.getElementById('groupManagerModalTitle').textContent =
+        card.tier === 'Free' ? `Edit Free Game: ${card.title}` : `Manage Paid VIP: ${card.title}`;
+
+      const pinStep = document.getElementById('groupPinStep');
+      const editContent = document.getElementById('groupEditContent');
+
+      if (isOwnerMode || verifiedGroupIds.has(card.id)) {
+        pinStep.classList.add('hidden');
+        editContent.classList.remove('hidden');
+      } else {
+        pinStep.classList.remove('hidden');
+        editContent.classList.add('hidden');
+        document.getElementById('groupOwnerPinInput').value = '';
+      }
+
+      document.getElementById('editTitle').value = card.title || '';
+      document.getElementById('editCardPhoto').value = card.photo || '';
+      document.getElementById('groupCoverPhotoFile').value = '';
+
+      const paidGroup = document.getElementById('paidFieldsGroup');
+      const freeLinkSec = document.getElementById('freeDirectLinkSection');
+
+      if (card.tier === 'Free') {
+        paidGroup.classList.add('hidden');
+        freeLinkSec.classList.remove('hidden');
+        document.getElementById('editFreeDirectUrl').value =
+          card.directUrl || (card.links && card.links[0] && card.links[0].url) || '';
+      } else {
+        paidGroup.classList.remove('hidden');
+        freeLinkSec.classList.add('hidden');
+        document.getElementById('editSlotBadge').value = card.slot || 'USYS 1';
+        document.getElementById('editInrAmount').value = card.inrAmount || 0;
+        document.getElementById('editPassword').value = card.password || '';
+        document.getElementById('editQrUrl').value = card.qrUrl || '';
+        document.getElementById('groupQrPhotoFile').value = '';
+        renderEditLinksContainer(card.links || []);
+      }
+
+      openModal('groupManagerModal');
+    };
+
+    document.getElementById('closeGroupManagerModal').addEventListener('click', () => closeModal('groupManagerModal'));
+
+    document.getElementById('groupPinForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const cardId = document.getElementById('editCardId').value;
+      const pin = document.getElementById('groupOwnerPinInput').value.trim();
+      if (pin === DEFAULT_GROUP_PIN || pin === appState.masterPin) {
+        verifiedGroupIds.add(cardId);
+        document.getElementById('groupPinStep').classList.add('hidden');
+        document.getElementById('groupEditContent').classList.remove('hidden');
+        showToast('PIN verified.');
+      } else {
+        showToast('Invalid PIN (Use 1111 or Master Owner PIN).', 'error');
+      }
+    });
+
+    function renderEditLinksContainer(links) {
+      const container = document.getElementById('editLinksContainer');
+      container.innerHTML = links.map(l => `
+        <div class="p-3 rounded-xl bg-white/5 border border-white/10 space-y-2 link-item-row">
+          <div class="flex items-center justify-between gap-2">
+            <input type="text" placeholder="Link Title" value="${escapeHtml(l.label || '')}" class="link-label-input flex-1 px-2.5 py-1.5 rounded-lg theme-input text-xs text-white" />
+            <button type="button" onclick="this.closest('.link-item-row').remove()" class="p-1.5 rounded-lg bg-rose-500/20 text-rose-300 hover:bg-rose-500/30 cursor-pointer">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+          <input type="url" placeholder="https://..." value="${escapeHtml(l.url || '')}" class="link-url-input w-full px-2.5 py-1.5 rounded-lg theme-input text-xs text-white font-mono" />
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    document.getElementById('addGroupLinkItemBtn').addEventListener('click', () => {
+      const container = document.getElementById('editLinksContainer');
+      const div = document.createElement('div');
+      div.className = 'p-3 rounded-xl bg-white/5 border border-white/10 space-y-2 link-item-row';
+      div.innerHTML = `
+        <div class="flex items-center justify-between gap-2">
+          <input type="text" placeholder="Link Title" class="link-label-input flex-1 px-2.5 py-1.5 rounded-lg theme-input text-xs text-white" />
+          <button type="button" onclick="this.closest('.link-item-row').remove()" class="p-1.5 rounded-lg bg-rose-500/20 text-rose-300 hover:bg-rose-500/30 cursor-pointer">
+            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+        <input type="url" placeholder="https://..." class="link-url-input w-full px-2.5 py-1.5 rounded-lg theme-input text-xs text-white font-mono" />
+      `;
+      container.appendChild(div);
+      lucide.createIcons();
+    });
+
+    document.getElementById('clearGroupCoverBtn').addEventListener('click', () => {
+      document.getElementById('editCardPhoto').value = '';
+      document.getElementById('groupCoverPhotoFile').value = '';
+      showToast('Photo cleared. Click Save Changes to apply.');
+    });
+
+    document.getElementById('groupEditForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const cardId = document.getElementById('editCardId').value;
+      const idx = appState.cards.findIndex(c => c.id === cardId);
+      if (idx === -1) return;
+
+      const tier = document.getElementById('editTierType').value;
+      const title = document.getElementById('editTitle').value.trim();
+
+      let photoData = document.getElementById('editCardPhoto').value.trim();
+      const photoFile = document.getElementById('groupCoverPhotoFile').files[0];
+      if (photoFile) photoData = await readImageFile(photoFile);
+
+      if (tier === 'Free') {
+        const directUrl = document.getElementById('editFreeDirectUrl').value.trim();
+        if (!directUrl) {
+          showToast('Please enter the Game Link.', 'error');
+          return;
+        }
+        appState.cards[idx] = {
+          ...appState.cards[idx],
+          tier: 'Free',
+          title,
+          photo: photoData,
+          directUrl,
+          inrAmount: 0,
+          password: '',
+          qrUrl: '',
+          links: []
+        };
+      } else {
+        let qrData = document.getElementById('editQrUrl').value.trim();
+        const qrFile = document.getElementById('groupQrPhotoFile').files[0];
+        if (qrFile) qrData = await readImageFile(qrFile);
+
+        const linkRows = document.querySelectorAll('#editLinksContainer .link-item-row');
+        const updatedLinks = [];
+        linkRows.forEach(row => {
+          const label = row.querySelector('.link-label-input').value.trim();
+          const url = row.querySelector('.link-url-input').value.trim();
+          if (url) updatedLinks.push({ label: label || 'VIP Link', url });
+        });
+
+        appState.cards[idx] = {
+          ...appState.cards[idx],
+          slot: document.getElementById('editSlotBadge').value,
+          tier: 'Paid',
+          title,
+          photo: photoData,
+          directUrl: updatedLinks[0] ? updatedLinks[0].url : appState.cards[idx].directUrl,
+          inrAmount: Number(document.getElementById('editInrAmount').value) || 0,
+          password: document.getElementById('editPassword').value.trim(),
+          qrUrl: qrData,
+          links: updatedLinks
+        };
+      }
+
+      saveState();
+      renderDirectory();
+      closeModal('groupManagerModal');
+      showToast('Changes saved!');
+    });
+
+    document.getElementById('deleteCardBtn').addEventListener('click', () => {
+      const cardId = document.getElementById('editCardId').value;
+      appState.cards = appState.cards.filter(c => c.id !== cardId);
+      saveState();
+      renderDirectory();
+      closeModal('groupManagerModal');
+      showToast('Item deleted.');
+    });
+
+    // =========================================================================
+    // PASSWORD UNLOCK, PIN CHANGE, BRANDING, GUIDE & SUPPORT MODALS
+    // =========================================================================
+    window.openUnlockModal = function(cardId) {
+      const card = appState.cards.find(c => c.id === cardId);
+      if (!card) return;
+      document.getElementById('unlockCardId').value = cardId;
+      document.getElementById('unlockPassInput').value = '';
+      document.getElementById('unlockModalPrompt').textContent = `Enter the unlock password for "${card.title}" to view VIP links immediately.`;
+      openModal('passwordUnlockModal');
+    };
+
+    document.getElementById('closePasswordUnlockModal').addEventListener('click', () => closeModal('passwordUnlockModal'));
+    document.getElementById('passwordUnlockForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const cardId = document.getElementById('unlockCardId').value;
+      const pass = document.getElementById('unlockPassInput').value.trim();
+      const card = appState.cards.find(c => c.id === cardId);
+      if (!card) return;
+
+      if (pass === (card.password || '')) {
+        unlockedPaidIds.add(cardId);
+        closeModal('passwordUnlockModal');
+        renderDirectory();
+        showToast(`${card.title} unlocked!`);
+      } else {
+        showToast('Invalid password. Please try again.', 'error');
+      }
+    });
+
+    document.getElementById('resetAllPaidLocksBtn').addEventListener('click', () => {
+      unlockedPaidIds.clear();
+      renderDirectory();
+      showToast('All Paid VIP unlocks have been reset.');
+    });
+
+    document.getElementById('changePinBtn').addEventListener('click', () => {
+      document.getElementById('newPinInput').value = '';
+      openModal('changePinModal');
+    });
+    document.getElementById('closeChangePinModal').addEventListener('click', () => closeModal('changePinModal'));
+    document.getElementById('changePinForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newPin = document.getElementById('newPinInput').value.trim();
+      if (newPin.length < 4) {
+        showToast('PIN must be at least 4 characters.', 'error');
+        return;
+      }
+      appState.masterPin = newPin;
+      saveState();
+      closeModal('changePinModal');
+      showToast('Master PIN updated.');
+    });
+
+    function openBrandingModal() {
+      document.getElementById('brandNameInput').value = appState.branding.brandName;
+      document.getElementById('heroTitleInput').value = appState.branding.heroTitle;
+      document.getElementById('heroDescInput').value = appState.branding.heroDesc;
+      openModal('brandingModal');
+    }
+
+    document.getElementById('openBrandingBtnBanner').addEventListener('click', openBrandingModal);
+    document.getElementById('openBrandingBtnHero').addEventListener('click', openBrandingModal);
+    document.getElementById('closeBrandingModal').addEventListener('click', () => closeModal('brandingModal'));
+    document.getElementById('brandingForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      appState.branding.brandName = document.getElementById('brandNameInput').value.trim() || 'USYS';
+      appState.branding.heroTitle = document.getElementById('heroTitleInput').value.trim();
+      appState.branding.heroDesc = document.getElementById('heroDescInput').value.trim();
+      saveState();
+      renderStaticSections();
+      closeModal('brandingModal');
+      showToast('Site branding updated.');
+    });
+
+    document.getElementById('editInstructionsBtn').addEventListener('click', () => {
+      document.getElementById('instructionsTextarea').value = appState.instructions.join('\n');
+      openModal('instructionsModal');
+    });
+    document.getElementById('closeInstructionsModal').addEventListener('click', () => closeModal('instructionsModal'));
+    document.getElementById('instructionsForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const lines = document.getElementById('instructionsTextarea').value
+        .split('\n')
+        .map(s => s.trim())
+        .filter(Boolean);
+      if (lines.length > 0) {
+        appState.instructions = lines;
+        saveState();
+        renderStaticSections();
+      }
+      closeModal('instructionsModal');
+      showToast('Guide updated.');
+    });
+
+    document.getElementById('editContactBtn').addEventListener('click', () => {
+      document.getElementById('contactNameInput').value = appState.contact.name;
+      document.getElementById('contactHandleInput').value = appState.contact.handle;
+      document.getElementById('contactUrlInput').value = appState.contact.url;
+      document.getElementById('contactNoteInput').value = appState.contact.note;
+      openModal('contactModal');
+    });
+    document.getElementById('closeContactModal').addEventListener('click', () => closeModal('contactModal'));
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      appState.contact = {
+        name: document.getElementById('contactNameInput').value.trim(),
+        handle: document.getElementById('contactHandleInput').value.trim(),
+        url: document.getElementById('contactUrlInput').value.trim(),
+        note: document.getElementById('contactNoteInput').value.trim()
+      };
+      saveState();
+      renderStaticSections();
+      closeModal('contactModal');
+      showToast('Support desk updated.');
+    });
+
+    // Theme & Wallpaper Controls
+    document.getElementById('themeSelect').addEventListener('change', (e) => {
+      appState.theme = e.target.value;
+      saveState();
+      applyThemeAndWallpaper();
+    });
+
+    document.getElementById('globalWallpaperInput').addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      appState.wallpaper = await readImageFile(file);
+      saveState();
+      applyThemeAndWallpaper();
+      showToast('Custom wallpaper applied!');
+    });
+
+    document.getElementById('removeWallpaperBtn').addEventListener('click', () => {
+      appState.wallpaper = '';
+      document.getElementById('globalWallpaperInput').value = '';
+      saveState();
+      applyThemeAndWallpaper();
+      showToast('Custom wallpaper removed.');
+    });
+
+    // Search & Filter Listeners
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderDirectory();
+    });
+
+    document.getElementById('tierFilter').addEventListener('change', (e) => {
+      activeTierFilter = e.target.value;
+      renderDirectory();
+    });
+
+    document.getElementById('slotFilter').addEventListener('change', (e) => {
+      activeSlotFilter = e.target.value;
+      renderDirectory();
+    });
+
+    document.querySelectorAll('.tier-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        activeTierFilter = pill.getAttribute('data-tier-pill');
+        document.getElementById('tierFilter').value = activeTierFilter;
+        renderDirectory();
+      });
+    });
+
+    // Export Standalone HTML with Current State Baked In
+    document.getElementById('exportHtmlBtn').addEventListener('click', () => {
+      const docClone = document.documentElement.cloneNode(true);
+      const banner = docClone.querySelector('#ownerBanner');
+      if (banner) banner.classList.add('hidden');
+      docClone.querySelectorAll('.owner-only').forEach(el => el.classList.add('hidden'));
+      const ownerBtnText = docClone.querySelector('#ownerModeBtnText');
+      if (ownerBtnText) ownerBtnText.textContent = 'Owner Access';
+
+      const scripts = docClone.querySelectorAll('script');
+      scripts.forEach(s => {
+        if (s.textContent.includes('const DEFAULT_STATE =')) {
+          s.textContent = s.textContent.replace(
+            /const DEFAULT_STATE = \{[\s\S]*?\n    \};/,
+            `const DEFAULT_STATE = ${JSON.stringify(appState, null, 2)};`
+          );
+        }
+      });
+
+      const htmlString = '<!DOCTYPE html>\n' + docClone.outerHTML;
+      const blob = new Blob([htmlString], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'usys-aviator-hub.html';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Updated HTML file downloaded!');
+    });
+
+    // Boot Application
+    window.addEventListener('DOMContentLoaded', () => {
+      loadState();
+      applyThemeAndWallpaper();
+      renderStaticSections();
+      renderDirectory();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
